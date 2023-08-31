@@ -1,0 +1,186 @@
+.NotifycationModal__wrapper {
+    position: absolute;
+    right: 16px;
+    width: auto !important;
+    background-color: var(--header-color);
+    padding: 16px;
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 10px;
+    transition: left 2s ease-in-out;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        .heading__title {
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        .heading__action {
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: var(--background-modal);
+            }
+
+            .modal_setting {
+                position: absolute;
+                top: 34px;
+                right: 0;
+                background-color: var(--header-color);
+                box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.6);
+                z-index: 999;
+                border-radius: 5px;
+
+                .noty__setting--list {
+                    margin: 0;
+                    padding: 10px 12px;
+
+
+                    .setting__item {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        list-style: none;
+                        padding: 10px 0;
+                        cursor: pointer;
+                        border-radius: 999px;
+
+                        &:hover {
+                            background-color: rgba(124, 129, 132, 0.4);
+                        }
+
+                        .setting__icon {
+                            font-size: 2.2rem;
+                            color: #fff;
+                            margin-right: 16px;
+                            min-width: 40px;
+                        }
+
+                        .setting__title {
+                            display: block;
+                            min-width: 250px;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .status__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .status__btn {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 50px;
+            margin-right: 10px;
+
+            &:not(.active):hover {
+                background-color: var(--background-modal);
+            }
+        }
+
+        .active {
+            background-color: rgba(56, 88, 152, .4);
+            color: #2374e1;
+        }
+    }
+
+    .type-see__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.6rem;
+        margin: 6px 0;
+
+        .type__before {
+            font-weight: 600;
+        }
+
+        .type__all {
+            color: #2374e1;
+            font-weight: 400;
+        }
+    }
+
+    .noti__wrapper {
+        display: flex;
+        padding: 12px 6px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(124, 129, 132, 0.4);
+        }
+
+        .noti-img__wrapper {
+            position: relative;
+
+            .noti__img {
+                border-radius: 999px;
+                object-fit: cover;
+            }
+
+            .img__icon {
+                position: absolute;
+                bottom: 8px;
+                right: -2px;
+                font-size: 1.6rem;
+                padding: 2px 4px;
+                background-color: #2374e1;
+                border-radius: 999px;
+            }
+        }
+
+        .noty__content {
+            margin-left: 14px;
+
+            .content__title,
+            .time {
+                display: block;
+            }
+
+            .content__title {
+                font-weight: 600;
+                max-width: 250px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                /* Số dòng tối đa */
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .time {
+                color: #2374e1;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        .noty__action {
+            margin: auto 10px auto 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            background-color: #2374e1;
+        }
+    }
+
+
+}

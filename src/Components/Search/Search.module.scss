@@ -1,0 +1,26 @@
+.modal__input {
+    position: relative;
+    margin-bottom: 12px;
+
+    .input__search {
+        width: 100%;
+        padding: 7px 18px 7px 28px;
+        border-radius: 50px;
+        color: #94989b;
+        background-color: #3a3b3c;
+        outline: none;
+        border: none;
+
+        &::placeholder {
+            color: #94989b;
+        }
+    }
+
+    .input__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+        color: #94989b;
+    }
+}
