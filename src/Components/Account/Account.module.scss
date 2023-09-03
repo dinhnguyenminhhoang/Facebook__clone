@@ -1,0 +1,25 @@
+.account__wrapper {
+    padding: 10px 6px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(124, 129, 132, 0.3);
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .account-img {
+        border-radius: 999px;
+        object-fit: cover;
+        margin-right: 8px;
+    }
+
+    .account-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.8rem;
+    }
+
+}

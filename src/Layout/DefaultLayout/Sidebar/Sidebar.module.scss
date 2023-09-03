@@ -1,0 +1,100 @@
+.sidebar__wrapper {
+    height: 100vh;
+    overflow-y: hidden;
+    transition: opacity 0.3s;
+
+    &:hover {
+        overflow-y: auto;
+        opacity: 1;
+    }
+
+    .sidebarItem__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 8px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(124, 129, 132, 0.3);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .item__btn {
+            min-width: 44px;
+            display: block;
+            padding: 0;
+            text-align: start;
+
+            .item__icon {
+                font-size: 2.2rem;
+                color: #1c88f6;
+            }
+        }
+
+        .item__title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+    }
+
+    .shortcuts__wrapper {
+        position: relative;
+        margin-top: 10px;
+
+
+        &::after {
+            content: "";
+            display: block;
+            background-color: var(--border-color);
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            top: -8px;
+        }
+
+        .heading__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+
+
+            .edit {
+                color: #4599ff;
+            }
+
+
+            .heading {
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: #b0b3b8;
+
+            }
+
+        }
+
+        .shortcut-item__wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: start;
+            padding: 10px 6px;
+            margin-left: -6px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(124, 129, 132, 0.3);
+                border-radius: 10px;
+            }
+
+            .shortcut__img {
+                border-radius: 10px;
+                margin-right: 10px;
+                object-fit: cover;
+            }
+
+        }
+    }
+}

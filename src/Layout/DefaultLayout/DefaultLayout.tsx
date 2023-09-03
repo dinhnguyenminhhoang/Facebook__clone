@@ -13,13 +13,15 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
     return (
         <div className={cx("container")}>
             <Header />
-            <Container fluid>
+            <Container fluid style={{ marginTop: "12px" }}>
                 <Row>
-                    <Col md={2}>
+                    <Col md={3}>
                         <Sidebar />
                     </Col>
-                    <Col md={8}>{children}</Col>
-                    <Col md={2}>
+                    <Col md={6} style={{ width: "600px", margin: "0 auto" }}>
+                        {children}
+                    </Col>
+                    <Col md={3}>
                         <RightBar />
                     </Col>
                 </Row>

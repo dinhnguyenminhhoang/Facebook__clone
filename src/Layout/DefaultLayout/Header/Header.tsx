@@ -1,10 +1,3 @@
-import {
-    faHome,
-    faStore,
-    faTelevision,
-    faUserGroup,
-    faUsers,
-} from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames/bind";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
@@ -19,12 +12,22 @@ import Messenger from "./Messenger";
 import Notifycation from "./Notifycation";
 import Search from "./Search";
 import MessengerModal from "../../../Components/MessengerModal/MessengerModal";
+import AccountModal from "../../../Components/AccountModal/AccountModal";
+import {
+    faHome,
+    faStore,
+    faTelevision,
+    faUserGroup,
+    faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
     const [isSearch, setIsSearch] = useState(false);
     const [isShowMenu, setIsShowMenu] = useState(false);
+    const [isShowMessage, setIsShowMessage] = useState(false);
     const [isShowNotification, setIsShowNotification] = useState(false);
+    const [isShowAccount, setIsShowAccount] = useState(false);
     const iconList = [
         {
             icon: faHome,
@@ -72,11 +75,35 @@ const Header: React.FC<HeaderProps> = () => {
     };
     const handleShowMenu = () => {
         setIsShowMenu(!isShowMenu);
-        if (!isShowMenu) setIsShowNotification(false);
+        if (!isShowMenu) {
+            setIsShowNotification(false);
+            setIsShowMessage(false);
+            setIsShowAccount(false);
+        }
     };
     const handleShowNotification = () => {
         setIsShowNotification(!isShowNotification);
-        if (!isShowNotification) setIsShowMenu(false);
+        if (!isShowNotification) {
+            setIsShowMenu(false);
+            setIsShowMessage(false);
+            setIsShowAccount(false);
+        }
+    };
+    const handleShowMessage = () => {
+        setIsShowMessage(!isShowMessage);
+        if (!isShowMessage) {
+            setIsShowMenu(false);
+            setIsShowNotification(false);
+            setIsShowAccount(false);
+        }
+    };
+    const handleShowAccount = () => {
+        setIsShowAccount(!isShowAccount);
+        if (!isShowAccount) {
+            setIsShowMenu(false);
+            setIsShowNotification(false);
+            setIsShowMenu(false);
+        }
     };
     return (
         <div>
@@ -91,17 +118,18 @@ const Header: React.FC<HeaderProps> = () => {
                 <HeaderItem cx={cx} iconList={iconList} />
                 <div className={cx("header__list-right")}>
                     <Menu cx={cx} handleShowMenu={handleShowMenu} />
-                    <Messenger cx={cx} />
+                    <Messenger cx={cx} handleShowMessage={handleShowMessage} />
                     <Notifycation
                         cx={cx}
                         handleShowNotification={handleShowNotification}
                     />
-                    <Account cx={cx} />
+                    <Account cx={cx} handleShowAccount={handleShowAccount} />
                 </div>
             </Container>
             {isShowMenu && <MenuModal />}
             {isShowNotification && <NotifycationModal />}
-            <MessengerModal />
+            {isShowMessage && <MessengerModal />}
+            {isShowAccount && <AccountModal />}
         </div>
     );
 };

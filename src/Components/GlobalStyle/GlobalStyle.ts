@@ -87,6 +87,7 @@ a[href] {
     --background-modal:#3a3b3c;
     --color:#a6a9ad;
     --border-color:#393a3b;
+    --background-icon:#303031;
 }
 button{
     background-color: transparent;
